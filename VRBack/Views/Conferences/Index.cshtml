@@ -1,0 +1,67 @@
+﻿@model IEnumerable<VRBack.Models.Conference>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="/Public/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Public/css/main.css">
+    <title>Index</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light justify-content-between navbardash">
+        <a class="navbar-brand">VIRTUAL LOADER PRO DASHBOARD</a>
+        <form class="form-inline">
+            <button class="btn btnpost my-2 my-sm-0" type="submit">Exit</button>
+        </form>
+    </nav>
+    <div class="container-fluid mt-4">
+        <p class="backlist">
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <div class="table-responsive table-bordered">
+            <table class="table">
+                <tr>
+                    <th scope="col" class="formtext">
+                        @Html.DisplayNameFor(model => model.Link1)
+                    </th>
+                    <th scope="col" class="formtext">
+                        @Html.DisplayNameFor(model => model.Link2)
+                    </th>
+                    <th scope="col" class="formtext">
+                        @Html.DisplayNameFor(model => model.Text1)
+                    </th>
+                    <th scope="col"></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Link1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Link2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Text1)
+                        </td>
+                        <td class="backlist">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+
+    </div>
+    
+</body>
+</html>

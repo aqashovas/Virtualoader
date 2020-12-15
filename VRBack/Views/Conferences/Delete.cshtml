@@ -1,0 +1,68 @@
+﻿@model VRBack.Models.Conference
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="/Public/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Public/css/main.css">
+    <title>Delete</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light justify-content-between navbardash">
+        <a class="navbar-brand">VIRTUAL LOADER PRO DASHBOARD</a>
+        <form class="form-inline">
+            <button class="btn btnpost my-2 my-sm-0" type="submit">Exit</button>
+        </form>
+    </nav>
+    <div class="container-fluid">
+        <h3 class="formtext mt-4 mb-2">Are you sure you want to delete this?</h3>
+        <div>
+
+            <dl class="dl-horizontal">
+                <dt class="formtext">
+                    @Html.DisplayNameFor(model => model.Link1)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Link1)
+                </dd>
+
+                <dt class="formtext">
+                    @Html.DisplayNameFor(model => model.Link2)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Link2)
+                </dd>
+
+                <dt class="formtext">
+                    @Html.DisplayNameFor(model => model.Text1)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Text1)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default btnpost" />
+                    <div class="backlist">
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
