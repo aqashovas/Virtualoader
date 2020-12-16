@@ -57,6 +57,7 @@ html {
     width: 100% !important;
     height:200px;
 }
+
 a {
     font-family: Poppins-Regular;
     font-size: 14px;
@@ -566,6 +567,12 @@ iframe {
     -moz-transition: all 0.4s;
     transition: all 0.4s;
 }
+    .btnpost a {
+        font-family: Poppins-Medium;
+        font-size: 18px;
+        color: white;
+        text-decoration:none;
+    }
 .formtext {
     font-family: Poppins-Medium;
     font-size: 23px;

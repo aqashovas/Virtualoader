@@ -17,7 +17,11 @@
     <nav class="navbar navbar-light bg-light justify-content-between navbardash">
         <a class="navbar-brand">VIRTUAL LOADER PRO DASHBOARD</a>
         <form class="form-inline">
-            <button class="btn btnpost my-2 my-sm-0" type="submit">Exit</button>
+            <button class="btn btnpost my-2 my-sm-0" type="submit">
+                <a href="@Url.Action("logout","login")">
+                    Exit
+                </a>
+            </button>
         </form>
     </nav>
     <div class="container-fluid">

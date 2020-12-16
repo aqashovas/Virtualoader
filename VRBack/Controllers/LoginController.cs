@@ -35,6 +35,8 @@ namespace VRBack.Controllers
                 }
 
                 ModelState.AddModelError("summary", "Email or password incorret");
+                return View(admin);
+
             }
 
             return View(admin);
@@ -45,6 +47,13 @@ namespace VRBack.Controllers
         {
             string a = Crypto.HashPassword("123");
             return Content(a);
+        }
+        public ActionResult Logout()
+        {
+            Session.Remove("login");
+            Session.Remove("UserId");
+
+            return RedirectToAction("index");
         }
     }
 }
